@@ -8,3 +8,5 @@ service-a:
   image: service-a:0.0.1-SNAPSHOT
   links:
     - "eureka-server"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
