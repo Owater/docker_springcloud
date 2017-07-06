@@ -8,7 +8,6 @@ eureka-server:
 service-a:
   image: service-a:0.0.1-SNAPSHOT
   links:
-    - "eureka-server"
     environment:
          EUREKA_HOST: eureka-server
          EUREKA_PORT: 7000
