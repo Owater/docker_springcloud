@@ -6,7 +6,7 @@ eureka-server:
 
 service-a:
   image: service-a:0.0.1-SNAPSHOT
+  environment:
+        SPRING_PROFILES_ACTIVE: docker
   links:
     - "eureka-server"
-    environment:
-      SPRING_PROFILES_ACTIVE: docker
