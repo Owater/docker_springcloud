@@ -1,15 +1,10 @@
 eureka-server:
   image: eureka-server:0.0.1
   hostname: eureka-server
-  name: eureka-server
   ports:
     - "7000:7000"
 
 service-a:
   image: service-a:0.0.1-SNAPSHOT
-  hostname: service-a
   links:
-    - eureka-server
-    environment:
-         EUREKA_HOST: eureka-server
-         EUREKA_PORT: 7000
+    - "eureka-server"
