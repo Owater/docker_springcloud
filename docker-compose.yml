@@ -1,5 +1,10 @@
 eureka-server:
-  image:  docker_java/eureka-server
+  image: docker_springcloud/eureka-server
   hostname: eureka-server
   ports:
     - "7000:7000"
+
+service-a:
+  image: docker_springcloud/service-a
+  links:
+    - "eureka-server"
