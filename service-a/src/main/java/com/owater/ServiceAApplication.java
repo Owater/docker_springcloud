@@ -1,5 +1,7 @@
 package com.owater;
 
+import org.springframework.cloud.netflix.hystrix.EnableHystrix;
+import org.springframework.cloud.netflix.hystrix.dashboard.EnableHystrixDashboard;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -17,8 +19,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 import static springfox.documentation.builders.RequestHandlerSelectors.withClassAnnotation;
 
-@EnableEurekaClient
 @SpringBootApplication
+@EnableEurekaClient
+@EnableHystrix
 @EnableSwagger2
 public class ServiceAApplication {
 
