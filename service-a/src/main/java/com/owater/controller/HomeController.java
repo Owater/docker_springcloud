@@ -19,10 +19,10 @@ public class HomeController {
     @GetMapping("hi")
     @HystrixCommand
     public String index(@RequestParam String name) {
-        return "hi "+name+",i am from port:" +port;
+        return "hi "+name+", port:" +port;
     }
 
     public String hiError(String name) {
-        return "hi,"+name+",sorry,error!";
+        return "hi,"+name+",error lalalala!";
     }
 }
