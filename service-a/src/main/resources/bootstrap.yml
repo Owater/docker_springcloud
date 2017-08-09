@@ -1,7 +1,17 @@
 spring:
   cloud:
     config:
-      uri: http://localhost:8070/
-      name: service-config
+      #uri: http://localhost:8888/
+      name: service-a
       label: master
       profile: dev
+      discovery:
+        enabled: true
+        service-id: service-config
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:7000/eureka/
