@@ -16,6 +16,9 @@ public class HomeController {
     @Value("${server.port}")
     String port;
 
+    @Value("${foo}")
+    private String foo;
+
     @GetMapping("hi")
     @HystrixCommand
     public String index(@RequestParam String name) {
@@ -24,5 +27,10 @@ public class HomeController {
 
     public String hiError(String name) {
         return "hi,"+name+",error lalalala!";
+    }
+
+    @GetMapping("getconfig")
+    public String getconfig() {
+        return "foo:" + foo;
     }
 }

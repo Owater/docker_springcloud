@@ -1,0 +1,24 @@
+server:
+  port: 8070
+
+spring:
+  application:
+    name: service-config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/Owater/SpringCloudConfig/
+          searchPaths: foo
+          username: your username
+          password: your password
+      label: master
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:7000/eureka/
