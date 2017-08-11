@@ -5,6 +5,7 @@ spring:
   application:
     name: service-a
 
+
 eureka:
   instance:
     hostname: localhost
@@ -13,6 +14,10 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:7000/eureka/
+
+management:
+  security:
+    enabled: false
 
 ---
 
