@@ -36,7 +36,7 @@ spring:
     config:
       discovery:
         enabled: true
-        service-id: config-server
+        service-id: server-config
       fail-fast: true
       retry:
         initial-interval: 2000

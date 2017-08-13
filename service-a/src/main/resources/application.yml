@@ -5,6 +5,7 @@ spring:
   application:
     name: service-a
 
+
 eureka:
   instance:
     hostname: localhost
@@ -13,6 +14,10 @@ eureka:
     fetchRegistry: true
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:7000/eureka/
+
+management:
+  security:
+    enabled: false
 
 ---
 
@@ -24,7 +29,7 @@ spring:
     config:
       discovery:
         enabled: true
-        service-id: config-server
+        service-id: server-config
       fail-fast: true
       retry:
         initial-interval: 2000
